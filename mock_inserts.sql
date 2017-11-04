@@ -1,3 +1,6 @@
+# Simulate inserts into database
+# Author: Swetha Revanur
+
 INSERT INTO Users(`username`) VALUES ("swetharevanur");
 INSERT INTO Users(`username`) VALUES ("rennerlucena");
 INSERT INTO Users(`username`) VALUES ("nickmachado");
