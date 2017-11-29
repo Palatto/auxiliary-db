@@ -46,17 +46,17 @@ CREATE TABLE Promotions (
 	location VARCHAR(255) NOT NULL,
 	promotion_code INT NOT NULL,
 	no_food BOOLEAN NOT NULL,
-	est_id VARCHAR(255),
+	establishment_id VARCHAR(255),
 	PRIMARY KEY(promotion_id),
-	FOREIGN KEY(promotion_code) REFERENCES PromotionTypes(promotion_code)
+	FOREIGN KEY(promotion_code) REFERENCES PromotionTypes(promotion_code) ON DELETE CASCADE
 );
 
 CREATE TABLE Requests (
     username VARCHAR(255) NOT NULL,
 	promotion_id VARCHAR(255) NOT NULL,
 	request_code INT NOT NULL,
-	FOREIGN KEY(username) REFERENCES Users(username),
-	FOREIGN KEY(promotion_id) REFERENCES Promotions(promotion_id),
-	FOREIGN KEY(request_code) REFERENCES RequestTypes(request_code)
+	FOREIGN KEY(username) REFERENCES Users(username)  ON DELETE CASCADE,
+	FOREIGN KEY(promotion_id) REFERENCES Promotions(promotion_id)  ON DELETE CASCADE,
+	FOREIGN KEY(request_code) REFERENCES RequestTypes(request_code) ON DELETE CASCADE
 );
 
