@@ -1,5 +1,7 @@
 use heroku_8266adc43670d0f;
 
+# Basic queries
+
 select * from users;
 select count(*) from users;
 
@@ -17,7 +19,9 @@ select count(*) from requests where request_code = '1';
 
 select now();
 
--- delete from promotions where title = like 'Caipirinha';
+# Others
+
+delete from promotions where title like 'test';
 
 
 
